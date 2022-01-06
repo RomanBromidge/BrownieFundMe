@@ -3,6 +3,13 @@ from scripts.deploy import deploy_fund_me
 from brownie import network, accounts, exceptions
 import pytest
 
+# Tests must run in the order of priority
+# 1 ALL tests must pass in the Brownie Ganache chain with mocks always!
+# 2 Testnet for integration always
+# 3 Brownie mainnet fork: optional but recommended
+# 4 Custom mainnet fork: optional but recommended
+# 5 Self/Local ganache testing: optional but recommended for tinkering
+
 
 def test_can_fund_and_withdraw():
     account = get_account()
